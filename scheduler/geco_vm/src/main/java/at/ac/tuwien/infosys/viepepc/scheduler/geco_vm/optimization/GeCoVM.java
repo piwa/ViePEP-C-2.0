@@ -29,7 +29,6 @@ import org.uncommons.watchmaker.framework.termination.ElapsedTime;
 
 import java.util.*;
 import java.util.concurrent.Future;
-import java.util.stream.Collectors;
 
 @Slf4j
 @Component
@@ -167,7 +166,7 @@ public class GeCoVM extends AbstractOnlyContainerOptimization implements Schedul
 
 
         operators.add(new SpaceAwareDeploymentMutation(new PoissonGenerator(4, rng), optimizationEndTime));
-//        operators.add(new SpaceAwareDeploymentCrossover(maxTimeAfterDeadline));
+//        operators.add(new SpaceAwareDeploymentCrossover());
 
 
         int eliteCount = (int) Math.round(populationSize * eliteCountNumber);
