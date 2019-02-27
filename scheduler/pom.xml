@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>at.ac.tuwien.infosys</groupId>
+        <artifactId>viepep-c</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+
+    <groupId>at.ac.tuwien.infosys.viepep-c</groupId>
+    <artifactId>scheduler</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>scheduler</name>
+    <description>ViePEP-C Scheduler</description>
+    <packaging>pom</packaging>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+
+        <!-- ViePEP-C -->
+        <dependency>
+            <groupId>at.ac.tuwien.infosys.viepep-c</groupId>
+            <artifactId>database</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>at.ac.tuwien.infosys.viepep-c</groupId>
+            <artifactId>library</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>at.ac.tuwien.infosys.viepep-c</groupId>
+            <artifactId>cloud-controller</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>at.ac.tuwien.infosys.viepep-c</groupId>
+            <artifactId>action-executor</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
+    </dependencies>
+
+    <modules>
+        <module>core</module>
+        <module>scheduler_library</module>
+        <module>geco_vm</module>
+    </modules>
+
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <type>pom</type>
+                <version>2.1.1.RELEASE</version>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <!--
+    <profiles>
+        <profile>
+            <id>frincu</id>
+            <modules>
+                <module>frincu</module>
+            </modules>
+        </profile>
+        <profile>
+            <id>geco</id>
+            <modules>
+                <module>geco</module>
+            </modules>
+        </profile>
+        <profile>
+            <id>geco_vm</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <modules>
+                <module>geco_vm</module>
+            </modules>
+        </profile>
+    </profiles>
+-->
+
+</project>
