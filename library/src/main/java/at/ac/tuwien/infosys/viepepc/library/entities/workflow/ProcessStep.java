@@ -47,6 +47,8 @@ public class ProcessStep extends Element implements Cloneable {
     private boolean hasToBeExecuted = true;
     private boolean hasToDeployContainer = false;
     private ProcessStepStatus processStepStatus;
+    private boolean containsPrivacyRelevantData = false;
+
 
     @ManyToOne
     @JoinColumn(name="serviceTypeId")

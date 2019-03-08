@@ -64,8 +64,8 @@ public abstract class AbstractOnlyContainerOptimization {
         builder.append("----------------------------- Winner Fitness -----------------------------\n");
         builder.append("Leasing startTime=").append(fitnessFunctionStartTime.getLeasingCost()).append("\n");
         builder.append("Leasing VM=").append(fitnessFunctionVM.getLeasingCost()).append("\n");
-        builder.append("Penalty=").append(fitnessFunctionStartTime.getPenaltyCost()).append("\n");
-        builder.append("Total Fitness=").append(fitnessFunctionStartTime.getLeasingCost() + fitnessFunctionVM.getLeasingCost() + fitnessFunctionStartTime.getPenaltyCost() + fitnessFunctionStartTime.getEarlyEnactmentCost()).append("\n");
+        builder.append("Penalty=").append(fitnessFunctionVM.getPenaltyCost()).append("\n");
+        builder.append("Total Fitness=").append(fitnessFunctionVM.getLeasingCost() + fitnessFunctionVM.getPenaltyCost()).append("\n");
         builder.append("----------------------------- Chromosome Checks --------------------------\n");
         boolean notEnoughSpace = vmSelectionHelper.checkIfVMIsTooSmall(allServiceTypeSchedulingUnits, "createOptimizationResult");
 

@@ -30,7 +30,9 @@ public class VMType implements Serializable {
     @XmlElement
     private String name;
     @XmlElement
-    private double costs;
+    private double costsCPU;
+    @XmlElement
+    private double costsRAM;
     @XmlElement
     private int cores;
     @XmlElement
@@ -38,7 +40,11 @@ public class VMType implements Serializable {
     @XmlElement(name = "ram")
     private double ramPoints;
     @XmlElement
-    private String location;
+    private String region;
+    @XmlElement
+    private String country;
+    @XmlElement
+    private String provider;
 
     private double storage;
 
@@ -53,6 +59,8 @@ public class VMType implements Serializable {
 //                "tableId=" + tableId +
 //                ", identifier=" + identifier +
                 "name='" + name + '\'' +
+                "country='" + country + '\'' +
+                "region='" + region + '\'' +
 //                ", costs=" + costs +
 //                ", cores=" + cores +
 //                ", flavorName='" + flavorName + '\'' +

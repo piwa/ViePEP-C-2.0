@@ -63,9 +63,9 @@ public class CloudServiceImpl implements CloudControllerService, DockerControlle
 
         if (simulate) {
             return cloudSimulatorClientService.startVM(vm);
-        } else if (vm.getVmType().getLocation().equals("aws")) {
+        } else if (vm.getVmType().getProvider().equals("aws")) {
             return awsClientService.startVM(vm);
-        } else if (vm.getVmType().getLocation().equals("gcloud")) {
+        } else if (vm.getVmType().getProvider().equals("gcloud")) {
             return gCloudClientService.startVM(vm);
         } else {
             return openStackClientService.startVM(vm);
@@ -78,9 +78,9 @@ public class CloudServiceImpl implements CloudControllerService, DockerControlle
 
         if (simulate) {
             return cloudSimulatorClientService.stopVirtualMachine(vm);
-        } else if (vm.getVmType().getLocation().equals("aws")) {
+        } else if (vm.getVmType().getProvider().equals("aws")) {
             return awsClientService.stopVirtualMachine(vm);
-        } else if (vm.getVmType().getLocation().equals("gcloud")) {
+        } else if (vm.getVmType().getProvider().equals("gcloud")) {
             return gCloudClientService.stopVirtualMachine(vm);
         } else {
             return openStackClientService.stopVirtualMachine(vm);
@@ -93,9 +93,9 @@ public class CloudServiceImpl implements CloudControllerService, DockerControlle
 
         if (simulate) {
             return cloudSimulatorClientService.checkAvailabilityOfDockerhost(vm);
-        } else if (vm.getVmType().getLocation().equals("aws")) {
+        } else if (vm.getVmType().getProvider().equals("aws")) {
             return awsClientService.checkAvailabilityOfDockerhost(vm);
-        } else if (vm.getVmType().getLocation().equals("gcloud")) {
+        } else if (vm.getVmType().getProvider().equals("gcloud")) {
             return gCloudClientService.checkAvailabilityOfDockerhost(vm);
         } else {
             return openStackClientService.checkAvailabilityOfDockerhost(vm);

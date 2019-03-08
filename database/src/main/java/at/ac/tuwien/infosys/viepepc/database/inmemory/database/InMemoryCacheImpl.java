@@ -2,6 +2,7 @@ package at.ac.tuwien.infosys.viepepc.database.inmemory.database;
 
 import at.ac.tuwien.infosys.viepepc.library.entities.container.Container;
 import at.ac.tuwien.infosys.viepepc.library.entities.container.ContainerConfiguration;
+import at.ac.tuwien.infosys.viepepc.library.entities.virtualmachine.ServerFarm;
 import at.ac.tuwien.infosys.viepepc.library.entities.virtualmachine.VMType;
 import at.ac.tuwien.infosys.viepepc.library.entities.virtualmachine.VirtualMachineInstance;
 import at.ac.tuwien.infosys.viepepc.library.entities.workflow.ProcessStep;
@@ -17,6 +18,8 @@ import java.util.concurrent.ConcurrentMap;
 @Component
 @Getter
 public class InMemoryCacheImpl {
+
+    private List<ServerFarm> serverFarms = new ArrayList<>();
 
     private List<VMType> vmTypes = new ArrayList<>();
     private Map<UUID, VirtualMachineInstance> vmInstances = new HashMap<>();

@@ -1,6 +1,7 @@
 package at.ac.tuwien.infosys.viepepc.database.bootstrap;
 
 import at.ac.tuwien.infosys.viepepc.database.bootstrap.containers.ContainerConfigurationsReader;
+import at.ac.tuwien.infosys.viepepc.database.bootstrap.serverFarms.ServerFarmsReaderImpl;
 import at.ac.tuwien.infosys.viepepc.database.bootstrap.vmTypes.VmTypesReaderImpl;
 import at.ac.tuwien.infosys.viepepc.database.inmemory.services.CacheContainerService;
 import at.ac.tuwien.infosys.viepepc.database.inmemory.services.CacheVirtualMachineService;
@@ -22,6 +23,8 @@ public class BootstrapDatabase implements ApplicationListener<ContextRefreshedEv
     @Autowired
     private VmTypesReaderImpl vmTypesReader;
     @Autowired
+    private ServerFarmsReaderImpl serverFarmsReader;
+    @Autowired
     private CacheVirtualMachineService cacheVirtualMachineService;
     @Autowired
     private CacheContainerService cacheDockerService;
@@ -30,6 +33,7 @@ public class BootstrapDatabase implements ApplicationListener<ContextRefreshedEv
     public void onApplicationEvent(ContextRefreshedEvent event) {
         containerConfigurationsReader.readContainerConfigurations();
         vmTypesReader.readVMTypes();
+        serverFarmsReader.readServerFarms();
 
         cacheDockerService.initializeDockerContainers();
 //        cacheVirtualMachineService.initializeVMs();

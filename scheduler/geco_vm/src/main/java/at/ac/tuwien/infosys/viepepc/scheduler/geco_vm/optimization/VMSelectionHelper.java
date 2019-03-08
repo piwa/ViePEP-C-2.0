@@ -49,7 +49,8 @@ public class VMSelectionHelper {
         double scheduledRAMUsage = serviceTypeSchedulingUnit.getContainer().getContainerConfiguration().getRam();
 
         List<VMType> allVMTypes = new ArrayList<>(cacheVirtualMachineService.getVMTypes());
-        allVMTypes.sort(Comparator.comparing(VMType::getCores));
+//        allVMTypes.sort(Comparator.comparing(VMType::getCores).thenComparing(VMType::getCostsCPU));
+        Collections.shuffle(allVMTypes);
 
         for (VMType vmType : allVMTypes) {
             if (vmType.getCpuPoints() >= scheduledCPUUsage && vmType.getRamPoints() >= scheduledRAMUsage) {

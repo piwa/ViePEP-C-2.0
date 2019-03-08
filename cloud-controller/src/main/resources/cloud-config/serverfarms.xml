@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ServerFarms>
+   <ServerFarm>
+      <provider>gcloud</provider>
+      <location>eu</location>
+      <eu_compliant>true</eu_compliant>
+   </ServerFarm>
+   <ServerFarm>
+      <provider>gcloud</provider>
+      <location>us</location>
+      <eu_compliant>true</eu_compliant>
+   </ServerFarm>
+
+   <ServerFarm>
+      <provider>provider2</provider>
+      <location>eu</location>
+      <eu_compliant>true</eu_compliant>
+   </ServerFarm>
+   <ServerFarm>
+      <provider>provider2</provider>
+      <location>us</location>
+      <eu_compliant>false</eu_compliant>
+   </ServerFarm>
+
+</ServerFarms>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
